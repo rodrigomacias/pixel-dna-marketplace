@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Wallet, Dna, Flask, Menu, X, Search } from 'lucide-react';
+import { Wallet, Dna, FlaskConical, Menu, X, Search } from 'lucide-react';
 import WalletConnectButton from './WalletConnectButton';
 
 const Navbar = () => {
@@ -27,7 +26,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 relative animate-float">
               <Dna size={32} className="text-cyber-purple absolute animate-dna-rotate" />
-              <Flask size={32} className="text-cyber-blue absolute animate-pulse opacity-70" />
+              <FlaskConical size={32} className="text-cyber-blue absolute animate-pulse opacity-70" />
             </div>
             <span className="text-xl font-bold neon-text">BioNFT</span>
           </Link>

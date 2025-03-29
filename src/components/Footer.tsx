@@ -1,7 +1,6 @@
-
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Dna, Instagram, Twitter, GitHub, Linkedin, ChevronRight } from 'lucide-react';
+import { Dna, Instagram, Twitter, Github, Linkedin, ChevronRight } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 
 const Footer = () => {

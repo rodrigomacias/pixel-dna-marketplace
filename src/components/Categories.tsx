@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Dna, Sparkles, Flask, Microscope, FileText } from 'lucide-react';
+import { Dna, Sparkles, FlaskConical, Microscope, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const categories = [
@@ -25,7 +25,7 @@ const categories = [
   {
     id: 'protein',
     name: 'Proteins',
-    icon: Flask,
+    icon: FlaskConical,
     description: 'Antibodies, enzymes, and protein-related IP assets',
     color: 'from-dna-red to-cyber-pink',
     bgColor: 'bg-dna-red/10',
