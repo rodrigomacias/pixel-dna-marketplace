@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Dna, Instagram, Twitter, Github, Linkedin, ChevronRight } from 'lucide-react';
@@ -28,7 +29,7 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon" className="text-gray-400 hover:text-cyber-blue">
-                <GitHub className="h-5 w-5" />
+                <Github className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon" className="text-gray-400 hover:text-cyber-blue">
                 <Linkedin className="h-5 w-5" />
