@@ -8,13 +8,13 @@ import { Heart, Dna, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface NFTCardProps {
   id: string;
-  name: string;
-  image: string;
-  price: string;
-  currency: string;
-  category: 'dna' | 'molecule' | 'protein' | 'cell' | 'research';
-  rarity: 'common' | 'uncommon' | 'rare' | 'legendary';
-  creator: string;
+  name?: string;
+  image?: string;
+  price?: string;
+  currency?: string;
+  category?: 'dna' | 'molecule' | 'protein' | 'cell' | 'research';
+  rarity?: 'common' | 'uncommon' | 'rare' | 'legendary';
+  creator?: string;
   liked?: boolean;
 }
 
@@ -33,7 +33,7 @@ const categoryIcons = {
   research: Dna
 };
 
-const NFTCard = ({ id, name, image, price, currency, category, rarity, creator, liked = false }: NFTCardProps) => {
+const NFTCard = ({ id, name = "", image = "", price = "", currency = "", category = "dna", rarity = "common", creator = "", liked = false }: NFTCardProps) => {
   const [isLiked, setIsLiked] = useState(liked);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -46,31 +46,37 @@ const NFTCard = ({ id, name, image, price, currency, category, rarity, creator, 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative overflow-hidden aspect-square">
-          <img 
-            src={image} 
-            alt={name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+        <div className="relative overflow-hidden aspect-square bg-cyber-dark">
+          {image && (
+            <img 
+              src={image} 
+              alt={name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          )}
           
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cyber-darker/80 pointer-events-none" />
           
           <div className="absolute top-2 left-2 right-2 flex justify-between items-center">
-            <Badge 
-              variant="secondary" 
-              className={`${rarityColors[rarity]} text-white text-xs px-2 py-0.5 flex items-center gap-1`}
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
-            </Badge>
+            {rarity && (
+              <Badge 
+                variant="secondary" 
+                className={`${rarityColors[rarity]} text-white text-xs px-2 py-0.5 flex items-center gap-1`}
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
+              </Badge>
+            )}
             
-            <Badge 
-              variant="outline" 
-              className="bg-cyber-dark/80 border-cyber-blue/30 text-xs text-gray-300 px-2 py-0.5 flex items-center gap-1 backdrop-blur-sm"
-            >
-              <CategoryIcon className="h-3 w-3 text-cyber-blue" />
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </Badge>
+            {category && (
+              <Badge 
+                variant="outline" 
+                className="bg-cyber-dark/80 border-cyber-blue/30 text-xs text-gray-300 px-2 py-0.5 flex items-center gap-1 backdrop-blur-sm"
+              >
+                <CategoryIcon className="h-3 w-3 text-cyber-blue" />
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </Badge>
+            )}
           </div>
           
           <div 
@@ -92,8 +98,8 @@ const NFTCard = ({ id, name, image, price, currency, category, rarity, creator, 
         <CardContent className="p-4">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="font-bold text-white truncate">{name}</h3>
-              <p className="text-sm text-gray-400 truncate">by {creator}</p>
+              <h3 className="font-bold text-white truncate">{name || "IPNFT"}</h3>
+              {creator && <p className="text-sm text-gray-400 truncate">by {creator}</p>}
             </div>
             <button
               onClick={(e) => {
@@ -108,11 +114,17 @@ const NFTCard = ({ id, name, image, price, currency, category, rarity, creator, 
         </CardContent>
         
         <CardFooter className="p-4 pt-0 flex justify-between items-center">
-          <div className="text-sm text-gray-400">Price</div>
-          <div className="font-bold text-cyber-green flex items-center">
-            <img src={`/assets/${currency.toLowerCase()}.svg`} alt={currency} className="w-4 h-4 mr-1" />
-            {price} {currency}
-          </div>
+          {price && (
+            <>
+              <div className="text-sm text-gray-400">Price</div>
+              <div className="font-bold text-cyber-green flex items-center">
+                {currency && (
+                  <img src={`/assets/${currency.toLowerCase()}.svg`} alt={currency} className="w-4 h-4 mr-1" />
+                )}
+                {price} {currency}
+              </div>
+            </>
+          )}
         </CardFooter>
       </Card>
     </Link>

@@ -25,7 +25,7 @@ const Hero = () => {
             <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cyber-dark/80 border border-cyber-blue/30 backdrop-blur-sm relative">
               <Sparkles className="w-4 h-4 mr-2 text-cyber-blue" />
               <span className="bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent">
-                Revolutionary NFT Platform for Biotech IP
+                Revolutionary IPNFT Platform for Biotech IP
               </span>
             </span>
           </div>
@@ -38,7 +38,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            The first NFT marketplace specifically designed for biotech and pharma IP. Secure, transparent, and built for scientists and innovators.
+            The first IPNFT marketplace specifically designed for biotech and pharma IP. Secure, transparent, and built for scientists and innovators.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -48,7 +48,7 @@ const Hero = () => {
             </Button>
             
             <Button variant="outline" className="text-lg px-8 py-6 border-cyber-purple/50 hover:bg-cyber-purple/20">
-              Create an NFT
+              Create an IPNFT
               <Sparkles className="ml-2 h-5 w-5" />
             </Button>
           </div>

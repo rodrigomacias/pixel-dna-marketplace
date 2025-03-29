@@ -15,10 +15,10 @@ const Footer = () => {
               <div className="w-8 h-8 relative">
                 <Dna size={32} className="text-cyber-purple" />
               </div>
-              <span className="text-xl font-bold text-white">BioNFT</span>
+              <span className="text-xl font-bold text-white">Veltis</span>
             </Link>
             <p className="text-gray-400 mb-4">
-              The premier marketplace for biotech and pharmaceutical intellectual property NFTs. 
+              The premier marketplace for biotech and pharmaceutical intellectual property IPNFTs. 
               Securely buy, sell, and trade valuable IP assets on the blockchain.
             </p>
             <div className="flex space-x-4">
@@ -53,7 +53,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/create" className="text-gray-400 hover:text-cyber-blue transition-colors">
-                  Create NFT
+                  Create IPNFT
                 </Link>
               </li>
               <li>
@@ -112,7 +112,7 @@ const Footer = () => {
         
         <div className="border-t border-cyber-blue/20 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} BioNFT. All rights reserved.
+            © {new Date().getFullYear()} Veltis. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link to="/terms" className="text-gray-500 hover:text-cyber-blue text-sm">
