@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				cyber: {
+					blue: '#00FFFF',
+					purple: '#9B30FF',
+					green: '#39FF14',
+					pink: '#FF10F0',
+					dark: '#121212',
+					darker: '#080808',
+					light: '#2A2A2A'
+				},
+				dna: {
+					red: '#FF3C5C',
+					blue: '#3C8CFF',
+					yellow: '#FFDF3C',
+					green: '#3CFF9E'
 				}
+			},
+			backgroundImage: {
+				'cyber-grid': "url('/assets/cyber-grid.svg')",
+				'dna-pattern': "linear-gradient(to right, rgba(60, 140, 255, 0.2), rgba(255, 60, 92, 0.2))"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +94,30 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-neon': {
+					'0%, 100%': { 
+						boxShadow: '0 0 8px rgba(0, 255, 255, 0.6), 0 0 16px rgba(0, 255, 255, 0.4)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 16px rgba(0, 255, 255, 0.8), 0 0 24px rgba(0, 255, 255, 0.6)' 
+					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'dna-rotate': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-neon': 'pulse-neon 2s infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'dna-rotate': 'dna-rotate 20s linear infinite'
 			}
 		}
 	},
